@@ -1,0 +1,21 @@
+
+
+/* module */
+
+/* btn_mod */
+.btn_mod {
+  border: none;
+  background: inherit;
+  color: #fff;
+  background-color: #525c92;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+
+
+
+
+
+/* font */
+
+@import '../font.css';
