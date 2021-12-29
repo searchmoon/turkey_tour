@@ -5,6 +5,10 @@ body {
   letter-spacing: 1px;
 }
 
+html {
+  width: 100%;
+}
+
 a {
   text-decoration: none;
   color: rgb(42, 49, 88);
@@ -17,6 +21,7 @@ button {
 .mob_only {
   display: none;
 }
+
 section p {
   font-size: 18px;
 }
@@ -33,6 +38,7 @@ header {
 }
 
 header div {
+  box-sizing: border-box;
   max-width: 1300px;
   margin: 0 auto;
   display: flex;
@@ -42,17 +48,20 @@ header div {
   padding: 0 20px;
 }
 
-header .main_logo {
-  font-weight: bold;
-  font-size: 30px;
+header .main_logo,
+footer .main_logo {
+  font-weight: 700;
+  font-size: 40px;
   line-height: 100px;
 
+  font-family: 'Gloria Hallelujah', 'Noto Sans KR';
 }
 
 header .mob_only {
   border: none;
   background: inherit;
   color: rgb(42, 49, 88);
+  padding: 0;
 }
 
 header .mob_only i {
@@ -109,14 +118,15 @@ main .main_tit p {
 }
 
 main .main_tit button {
-  margin: 40px 0 0 20px;
-  display: block;
+  margin: 20px 0 0 20px;
+  font-size: 20px;
 }
 
 /* main_intro */
 
 .main_intro {
   max-width: 1300px;
+  box-sizing: border-box;
   margin: 50px auto 30px;
   padding: 0 20px;
   display: flex;
@@ -151,13 +161,15 @@ main .main_tit button {
   text-align: center;
   max-width: 1300px;
 }
+
 .middle_intro h3 {
   font-size: 45px;
   font-weight: bold;
-  color:rgba(219, 103, 25, 0.959); 
+  color: rgb(219, 103, 25);
   margin: 70px auto 0;
 }
-.middle_intro p {
+
+.middle_intro>p {
   width: 70vw;
   margin: 20px auto 50px;
 }
@@ -169,17 +181,26 @@ main .main_tit button {
   gap: 20px;
   margin: 0 20px;
 }
-.middle_intro .images_3 a img{
+
+.middle_intro .images_3 a img {
   height: 400px;
   width: 400px;
   object-fit: cover;
   border-radius: 20px;
 }
+
 .middle_intro .learn_more {
   display: flex;
   align-items: center;
-  margin: 50px 0 100px 0;
+  justify-content: space-between;
+  margin: 50px 20px;
 }
+
+.middle_intro .learn_more>p {
+  padding: 20px;
+  max-width: 1000px;
+}
+
 .middle_intro .learn_more .btn_mod {
   height: 36px;
   min-width: 108px;
@@ -189,24 +210,27 @@ main .main_tit button {
 
 /* bottom-sec */
 
-.bottom_sec{
+.bottom_sec {
   margin-top: 150px;
   margin: 0 auto;
   width: 100%;
 }
+
 .bottom_sec::after {
   content: "";
   display: block;
   background: url(./public/images/istanbul_night.jpg);
   background-position: center;
   height: 320px;
-  opacity: .6; 
+  opacity: .6;
 }
-.bottom_sec section{
+
+.bottom_sec section {
   max-width: 1300px;
   height: 100px;
   margin: 0 auto;
 }
+
 .bottom_sec .subscribe_box {
   width: 1260px;
   display: flex;
@@ -221,15 +245,18 @@ main .main_tit button {
   z-index: 100;
   position: relative;
 }
+
 .subscribe_box div {
   width: 490px;
 }
+
 .subscribe_box h4 {
   font-weight: bold;
   color: #fff;
   font-size: 35px;
   margin-bottom: 15px;
 }
+
 .subscribe_box p {
   color: #fff;
   font-size: 14px;
@@ -240,17 +267,78 @@ main .main_tit button {
 .subscribe_box form {
   position: relative;
 }
-  .subscribe_box form input {
+
+.subscribe_box form input {
   border-radius: 30px;
   width: 480px;
   padding: 16px;
+  border: none;
 }
+
 .subscribe_box form .btn_mod {
   position: absolute;
-  padding:10px 25px;
+  padding: 10px 25px;
   right: 8px;
-  top: 8px;
+  top: 6px;
 }
+
+/* footer */
+
+.footer_box {
+  display: flex;
+  max-width: 1300px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.footer_box div {
+  display: flex;
+}
+
+.footer_box div h1 {}
+
+.footer_box div .logos {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  height: 40px;
+  align-items: flex-end;
+}
+
+.footer_box div .logos li {
+  margin-right: 15px;
+  background-color: rgb(219, 103, 25);
+  border-radius: 20px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.footer_box div .logos li a {}
+
+.footer_box div .logos li a i {
+  color: #fff;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.footer_box .footer_info {
+  display: flex;
+  align-items: flex-end;
+}
+
+.footer_box .footer_info li {}
+
+.footer_box .footer_info li a {
+  color: #777;
+  display: inline-block;
+  padding: 8px;
+}
+
+
 
 
 /* tablet */
@@ -275,12 +363,18 @@ main .main_tit button {
     padding: 50px 0 0 0;
     text-align: center;
   }
-  .middle_intro h3{
+
+  .main_intro h3,
+  .main_intro p,
+  .middle_intro h3,
+  .middle_intro p {
     width: 80vw;
   }
+
   .bottom_sec {
-    margin: 0 auto;
+    margin: 100px auto 0;
   }
+
   .bottom_sec .subscribe_box {
     flex-direction: column;
     margin: 0 auto;
@@ -288,10 +382,12 @@ main .main_tit button {
     top: -50px;
     max-width: 600px;
   }
-  .bottom_sec .subscribe_box div{
+
+  .bottom_sec .subscribe_box div {
     margin-bottom: 20px;
   }
-  .bottom_sec .subscribe_box h4{
+
+  .bottom_sec .subscribe_box h4 {
     margin-bottom: 30px;
   }
 }
@@ -325,35 +421,84 @@ main .main_tit button {
     font-size: 15px;
   }
 
-  /* main_intro */
-  
+  /* middle_intro */
+  .middle_intro .images_3 a img {
+    height: 300px;
+    width: 300px;
+  }
+
+
   /* bottom-intro */
+  .bottom_sec {
+    margin: 150px auto 0;
+  }
 
   .bottom_sec .subscribe_box {
+
     flex-direction: column;
     position: relative;
-    top: -50px;
+    top: -100px;
     max-width: 400px;
   }
-  .bottom_sec .subscribe_box div{
+
+  .bottom_sec .subscribe_box div {
     width: 300px;
   }
-  .bottom_sec .subscribe_box h4{
+
+  .bottom_sec .subscribe_box h4 {
     margin-bottom: 30px;
   }
-  .bottom_sec .subscribe_box p{
+
+  .bottom_sec .subscribe_box p {
     width: 300px;
   }
-  .bottom_sec .subscribe_box form{
+
+  .bottom_sec .subscribe_box form {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
   }
-  .bottom_sec .subscribe_box input{
+
+  .bottom_sec .subscribe_box input {
     width: 270px;
   }
-  .bottom_sec .subscribe_box .btn_mod{
+
+  .bottom_sec .subscribe_box .btn_mod {
     position: relative;
     top: 20px;
   }
+
+  /* footer */
+  .footer_box {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer_box div {
+    flex-direction: column;
+  }
+
+  .footer_box div .main_logo {
+    line-height: 50px;
+    margin-bottom: 20px;
+  }
+
+  .footer_box div .logos {
+    margin-bottom: 20px;
+    position: static;
+  }
+
+  .footer_box div h1 a {
+    font-size: 30px;
+  }
+
+  .footer_box .footer_info {
+    flex-direction: column;
+  }
+
+  .footer_box .footer_info li {
+    text-align: end;
+  }
+
+  .footer_box .footer_info li a {}
 }
