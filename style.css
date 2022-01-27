@@ -9,6 +9,10 @@ html {
   width: 100%;
 }
 
+.hidden{
+  display: none;
+}
+
 a {
   text-decoration: none;
   color: rgb(42, 49, 88);
