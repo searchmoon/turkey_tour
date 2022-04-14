@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="modules.css">
+    <link rel="stylesheet" href="login.css">
+  </head>
+
+  <body>
+    <article class="modal-login on">
+      <h2 class="txt-hide">회원으로 로그인 혹은 SNS 로그인</h2>
+      <section class="cont-form-login">
+        <h3 class="tit-form">로그인 또는 회원가입</h3>
+        <p class="txt-form">WannaGo?</p>
+        <form class="form-login">
+          <fieldset class="module-inp module-inp-id error">
+            <label for="inpId" class="txt-hide">아이디</label>
+            <input type="text" class="inp-login" id="inpId" placeholder="아이디">
+            <strong class="inp-error">아이디를 입력해 주세요.</strong>
+          </fieldset>
+          <fieldset class="module-inp error">
+            <label for="inpPw" class="txt-hide">비밀번호</label>
+            <input type="password" class="inp-login" id="inpPw" placeholder="비밀번호">
+            <strong class="inp-error">아이디 혹은 비밀번호과 일치하지 않습니다.</strong>
+          </fieldset>
+          <input type="checkbox" id="inpHold" class="inp-hold txt-hide">
+          <label for="inpHold" class="labl-hold">로그인 상태 유지</label>
+          <button type="button" onclick="loginButton()" class="btn-login">로그인</button>
+          <button type="button" class="btn-close"><img src="./images/close.png"
+              alt="로그인 닫기"></button>
+          <a href="javascript:void(0)" class="link-signup">회원가입</a>
+          <a href="javascript:void(0)" class="link-lost">아이디/비밀번호 찾기</a>
+        </form>
+      </section>
+    </article>
+    <script src="./main.js"></script>
+  </body>
+
+</html>

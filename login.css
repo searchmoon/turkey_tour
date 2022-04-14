@@ -1,0 +1,169 @@
+@charset "utf-8";
+/* base */
+@font-face {
+    font-family: Spoqa Han Sans Neo;
+    src: url("../font/SpoqaHanSansNeo-Regular.woff") format("woff");
+    font-weight: 400;
+}
+@font-face {
+    font-family: Spoqa Han Sans Neo;
+    src: url("../font/SpoqaHanSansNeo-Medium.woff") format("woff");
+    font-weight: 500;
+}
+@font-face {
+    font-family: Spoqa Han Sans Neo;
+    src: url("../font/SpoqaHanSansNeo-Bold.woff") format("woff");
+    font-weight: 700;
+}
+
+body{
+    font-family: "Spoqa Han Sans Neo", sans-serif;
+}
+/* 모달 스타일 */
+.modal-login{
+    display: none;
+    height:100%;
+}
+
+.modal-login.on{
+    display: block;
+}
+
+.modal-login::after{
+    display: block;
+    content:"";
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    background-color: black;
+    opacity: .7;
+    z-index: 10;
+}
+
+.modal-login .cont-form-login{
+    width:100%;
+    max-width:520px;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50% , -50%);
+    background-color: #fff;
+    z-index: 20;
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+}
+
+.cont-form-login .tit-form{
+    padding:20px 0 18px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    border-bottom:1px solid #C4C4C4;
+}
+
+.cont-form-login .txt-form{
+    margin:26px 0 24px;
+    padding-left:24px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.cont-form-login .form-login{
+    padding:0 24px 0;
+    text-align: center;
+}
+
+.form-login .inp-error{
+    text-align: left;
+}
+.form-login .labl-hold{
+    display: block;  
+    text-align: left; 
+    margin: 17px 0 21px;
+    cursor: pointer;
+}
+.form-login .labl-hold::before{
+    display: inline-block;
+    content:'';
+    width:22px;
+    height:22px;
+    margin-right: 8px;
+    background-image: url("./images/icon_check_empty.png");
+    vertical-align: -5px;
+}
+/* 접근성 고려 : 인식의 용이성*/
+/* 포커싱이 되어야 한다. 중요중요!! */
+.form-login .inp-hold:focus+.labl-hold::before{
+  outline: 2px solid black;
+  /* outline-offset: 5px; */
+  border-radius: 50px;
+}
+
+.form-login .inp-hold:checked+.labl-hold::before {
+  background-image: url(./images/icon_check.png);
+}
+/* 인풋홀드를 체크했을 때, 라벨홀드의 가상요소의 백그라운드 이미지가
+이렇게 바뀐다는 뜻! 라벨홀드의 가상요소는  인풋홀드의 형제요소이기 때문에 붙여서
+써주었다.(+는 뭐지?) */
+.form-login a[class^="link"]{
+  display: inline-block;
+  margin-top: 20px;
+  line-height: 18px;
+  font-size: 14px;
+  color: #767676;
+  text-decoration: none;
+}
+/* a의 클래스 중에 link로 '시작'-> ^ 
+*/
+.form-login .link-signup::after{
+  display: inline-block;
+  content: '\007C';
+  margin: 0 8px 0 12px;
+}
+
+.cont-form-login .btn-close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: content-box;
+  padding: 22px;
+  background-color: transparent;
+}
+.cont-form-login .cont-sns-login{
+  position: relative;
+  margin-top: 30px;
+  padding: 30px 24px 25px;
+}
+.cont-sns-login::before{
+  content: '또는';
+  display: block;
+  width: 52px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background-color: #fff;
+  z-index: 10;
+  color: #767676;
+}
+.cont-sns-login::after{
+  content: '';
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 8px;
+  height: 1px;
+  background: #c4c4c4;
+  width: calc(100% - 48px);
+}
+.cont-sns-login .list-sns li+li{
+  margin-top: 10px;
+}
+/* .list-sns li+li 이것의 뜻은 li의 두번째요소부터 이 스타일이 추가된다는 뜻
+(첫번째 li는 적용이 안된다.)*/
