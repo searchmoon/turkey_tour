@@ -104,7 +104,7 @@ main .main_tit {
   color: #fff;
   position: absolute;
   top: 30vh;
-  z-index: 10;
+  z-index: 5;
   width: 60vw;
   margin-left: 10vw;
 }
@@ -408,6 +408,33 @@ main .main_tit button {
 
   header .nav_bar {
     display: none;
+  }
+  header .visible {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(47, 55, 96);
+    height: 100vh;
+    width: 50vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5vw;
+  }
+  header .visible .x_btn {
+    color: #fff;
+    position: absolute;
+    right: 5vw;
+
+  }
+  header .visible li {
+    margin: 5px 0;
+  }
+  header .visible li a{
+    color: #fff;
+  }
+  header .visible button {
+    width: min-content;
+    margin-top: 10px;
   }
 
   .mob_only {
